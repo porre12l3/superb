@@ -1,46 +1,129 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const consejosContainer = document.getElementById('consejos-list');
+    const consejosContainer = document.querySelector('.consejos-container');
 
-    const rssFeeds = {
-        "ejercicios": 'https://rss2json.com/api.json?rss_url=https://www.20minutos.es/rss/deportes/',
-        "futbol": 'https://rss2json.com/api.json?rss_url=https://as.com/rss/tags/futbol/primera.xml',
-        "dieta_saludable": 'https://rss2json.com/api.json?rss_url=https://www.menshealth.com/es/nutricion/rss'
-    };
+    const consejos = [
+        {
+            titulo: "Ejercicio Regular",
+            descripcion: "Incorporar ejercicio a tu rutina diaria puede mejorar tu salud en general.",
+            link: "https://www.verywellfit.com"
+        },
+        {
+            titulo: "Nutrición Equilibrada",
+            descripcion: "Una dieta balanceada es esencial para una vida saludable.",
+            link: "https://www.healthline.com"
+        },
+        {
+            titulo: "Consejos de Fútbol",
+            descripcion: "Practica estas técnicas para mejorar tu rendimiento en el campo.",
+            link: "https://www.fifa.com"
+        },
+        {
+            titulo: "Salud y Bienestar",
+            descripcion: "Consejos para un estilo de vida saludable y activo.",
+            link: "https://www.menshealth.com"
+        },
+        {
+            titulo: "Prevención de Lesiones",
+            descripcion: "Conoce cómo evitar y tratar lesiones comunes en el deporte.",
+            link: "https://www.mayoclinic.org"
+        },
+        {
+            titulo: "Hidratación Adecuada",
+            descripcion: "Mantenerse bien hidratado es fundamental para un rendimiento óptimo.",
+            link: "https://www.webmd.com"
+        },
+        {
+            titulo: "Estiramientos",
+            descripcion: "Realiza estiramientos antes y después del ejercicio para evitar lesiones.",
+            link: "https://www.acefitness.org"
+        },
+        {
+            titulo: "Descanso y Recuperación",
+            descripcion: "El descanso adecuado es clave para mejorar tu rendimiento deportivo.",
+            link: "https://www.runnersworld.com"
+        },
+        {
+            titulo: "Alimentación Pre-Entrenamiento",
+            descripcion: "Consume un snack saludable antes de tu entrenamiento para tener energía.",
+            link: "https://www.healthline.com"
+        },
+        {
+            titulo: "Control del Estrés",
+            descripcion: "Aprende técnicas para manejar el estrés que pueden afectar tu salud.",
+            link: "https://www.mindbodygreen.com"
+        },
+        {
+            titulo: "Importancia del Calentamiento",
+            descripcion: "Siempre comienza con un calentamiento adecuado para prevenir lesiones.",
+            link: "https://www.mayoclinic.org"
+        },
+        {
+            titulo: "Hidratación",
+            descripcion: "Mantente bien hidratado antes, durante y después de hacer ejercicio para optimizar el rendimiento.",
+            link: "https://www.webmd.com"
+        },
+        {
+            titulo: "Alimentación Post-Entrenamiento",
+            descripcion: "Consume proteínas y carbohidratos después de entrenar para ayudar a la recuperación muscular.",
+            link: "https://www.healthline.com"
+        },
+        {
+            titulo: "Técnicas de Respiración",
+            descripcion: "Aprender a respirar correctamente puede mejorar tu rendimiento en deportes de resistencia.",
+            link: "https://www.verywellfit.com"
+        },
+        {
+            titulo: "Prevención de Lesiones",
+            descripcion: "Usa el equipo adecuado y sigue las técnicas correctas para evitar lesiones.",
+            link: "https://www.aap.org"
+        },
+        {
+            titulo: "Establecer Metas Realistas",
+            descripcion: "Establece metas a corto y largo plazo para mantener la motivación y medir tu progreso.",
+            link: "https://www.health.harvard.edu"
+        },
+        {
+            titulo: "Variar la Rutina de Ejercicios",
+            descripcion: "Cambia tu rutina regularmente para evitar estancarte y mantener el interés.",
+            link: "https://www.acefitness.org"
+        },
+        {
+            titulo: "Descanso y Recuperación",
+            descripcion: "Dale a tu cuerpo tiempo suficiente para recuperarse entre sesiones de entrenamiento intensas.",
+            link: "https://www.runnersworld.com"
+        },
+        {
+            titulo: "Importancia de la Flexibilidad",
+            descripcion: "Incorpora ejercicios de estiramiento en tu rutina para mejorar la flexibilidad y prevenir lesiones.",
+            link: "https://www.verywellfit.com"
+        },
+        {
+            titulo: "Mentalidad Positiva",
+            descripcion: "Mantén una mentalidad positiva y visualiza el éxito para mejorar el rendimiento.",
+            link: "https://www.mindbodygreen.com"
+        }
+    ];
 
-    const apiKey = 'fr4aeeuuqxowvs9ykecuu8rwpnh7a5iskwdctmjz';
+    consejos.forEach(consejo => {
+        const consejoItem = document.createElement('div');
+        consejoItem.classList.add('consejo-item');
 
-    function cargarConsejos(feedUrl) {
-        const url = `${feedUrl}&api_key=${apiKey}`;
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                data.items.forEach(item => {
-                    const consejoItem = document.createElement('div');
-                    consejoItem.classList.add('consejo-item');
+        const title = document.createElement('h3');
+        title.textContent = consejo.titulo;
 
-                    const title = document.createElement('h3');
-                    title.textContent = item.title;
+        const description = document.createElement('p');
+        description.textContent = consejo.descripcion;
 
-                    const description = document.createElement('p');
-                    description.textContent = item.description;
+        const button = document.createElement('button');
+        button.textContent = 'Ver más';
+        button.onclick = () => {
+            window.location.href = consejo.link;
+        };
 
-                    const button = document.createElement('button');
-                    button.textContent = 'Ver más';
-                    button.onclick = () => {
-                        window.location.href = item.link;
-                    };
+        consejoItem.appendChild(title);
+        consejoItem.appendChild(description);
+        consejoItem.appendChild(button);
 
-                    consejoItem.appendChild(title);
-                    consejoItem.appendChild(description);
-                    consejoItem.appendChild(button);
-
-                    consejosContainer.appendChild(consejoItem);
-                });
-            })
-            .catch(error => console.error('Error al cargar los consejos:', error));
-    }
-
-    cargarConsejos(rssFeeds.ejercicios);
-    cargarConsejos(rssFeeds.futbol);
-    cargarConsejos(rssFeeds.dieta_saludable);
+        consejosContainer.appendChild(consejoItem);
+    });
 });
