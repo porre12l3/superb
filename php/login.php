@@ -1,31 +1,34 @@
-<?php
-include 'conexion.php';
+// login.php
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+session_start();
+require 'conexion.php'; // Asegúrate de que tu archivo de conexión esté incluido
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT * FROM `red social` WHERE email = ?");
+    // Preparar la consulta
+    $stmt = $conexion->prepare("SELECT nombre, password FROM red_social WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
-    $result = $stmt->get_result();
+    $stmt->store_result();
+    
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($nombre, $hashed_password);
+        $stmt->fetch();
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        
-        if (password_verify($password, $row['contraseña'])) {
-            
-            echo "Iniaste sesion correctamente";
-            header("Location: ../muro.html");
+        // Verificar la contraseña
+        if (password_verify($password, $hashed_password)) {
+            // Iniciar sesión
+            $_SESSION['nombre'] = $nombre; // Guardar el nombre en la sesión
+            header("Location: muro.php"); // Redirigir al muro
             exit();
         } else {
-            echo "<script>alert('Correo o contraseña inválida'); window.location.href='../login.html';</script>";
+            echo "Correo o contraseña incorrectos.";
         }
     } else {
-        echo "<script>alert('Correo o contraseña inválida'); window.location.href='../login.html';</script>";
+        echo "Correo o contraseña incorrectos.";
     }
-
+    
     $stmt->close();
-    $conn->close();
 }
-?>
