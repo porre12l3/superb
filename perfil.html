@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body>
+    <div class="header-ribbon">
+        <div class="image-buttons">
+            <a href="muro.html"><img src="img/icono_de_casa.png" class="header-btn" alt="Icono 1"></a>
+            <a href="mensajeria.html"><img src="img/icono_de_mensaje.png" class="header-btn" alt="Icono 2"></a>
+            <a href="perfil.html"><img src="img/icono_de_perfil.png" class="header-btn" alt="Icono 3"></a>
+        </div>
+    </div>
+
+    <div class="perfil-container">
+        <div class="perfil-info">
+            <img src="img/foto_de_perfil.png" alt="Foto de perfil" class="perfil-img">
+            <h2>Nombre de Usuario</h2>
+            <p>Correo electrónico: usuario@ejemplo.com</p>
+            <p>Descripción del perfil. Aquí puedes agregar una breve biografía o información relevante.</p>
+        </div>
+
+        <div class="perfil-options">
+            <button onclick="editProfile()">Editar Perfil</button>
+            <button onclick="logout()">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <script src="js/perfil.js"></script>
+</body>
+</html>

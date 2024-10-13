@@ -1,0 +1,164 @@
+body {
+    background-image: url('../img/Fondo_muro.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    color: rgb(71, 2, 2);
+}
+
+.header-ribbon {
+    width: 90%;
+    height: 80px;
+    background-color: #110c21;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+
+.header-btn {
+    width: 60px;
+    transition: all 0.3s ease;
+}
+
+.header-btn:hover {
+    transform: scale(1.2);
+    border-bottom: 3px solid #fff;
+}
+
+
+.profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 95%;
+    max-width: 1200px;
+    height: 90vh;
+    gap: 20px;
+}
+
+
+.main-profile {
+    width: 70%;
+    background-color: #110c21;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    overflow-y: auto;
+}
+
+
+.profile-details {
+    width: 90%;
+    background-color: rgba(17, 12, 33, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.profile-details h2 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.profile-details p {
+    font-size: 16px;
+    color: #b3b3b3;
+    margin: 5px 0;
+}
+
+.profile-details img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+.edit-profile-btn {
+    padding: 10px 20px;
+    background-color: #717568;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.edit-profile-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.menu {
+    width: 20%;
+    height: 45vh;
+    background-color: #110c21;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.menu h3 {
+    color: #717568;
+    margin: 0 0 20px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.menu button {
+    width: 100%;
+    padding: 12px 25px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.menu button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.file-icon {
+    width: 55px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin: 10px 0;
+}
+
+.file-icon:hover {
+    transform: scale(1.2);
+}
