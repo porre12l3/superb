@@ -1,0 +1,123 @@
+body {
+    background-image: url('../img/Fondo_muro.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.header-ribbon {
+    width: 90%; 
+    height: 80px; 
+    background-color: #110c21; 
+    border-radius: 15px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    position: sticky; 
+    top: 0; 
+    z-index: 10; 
+}
+
+.image-buttons {
+    display: flex;
+    gap: 30px; 
+}
+
+.header-btn {
+    width: 60px; 
+    transition: all 0.3s ease; 
+}
+
+.header-btn:hover {
+    transform: scale(1.2);
+    border-bottom: 3px solid #fff; 
+}
+
+.sports-container {
+    width: 90%;
+    max-width: 1200px;
+    min-height: 85vh;
+    background-color: rgba(17, 12, 33, 0.8);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: auto; 
+    max-height: 400px; 
+}
+
+.sports-container h1 {
+    color: white; 
+    margin-bottom: 20px; 
+}
+
+.accordion {
+    margin: 10px 0;
+    border-radius: 8px;
+    background-color: #e0e0e0; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: hidden; 
+    width: 100%; 
+}
+
+.accordion-title {
+    background-color: #f0f0f0e6; 
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-title:hover {
+    background-color: #2b2a44; 
+}
+
+.accordion-content {
+    padding: 15px;
+    display: none; 
+    background-color: #f0f0f0e6; 
+    overflow: hidden; 
+}
+
+.accordion-content button {
+    padding: 10px 20px; 
+    border: 2px solid #ff4500; 
+    border-radius: 15px; 
+    background-color: #ff4500; 
+    color: black; 
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.accordion-content button:hover {
+    background-color: #ff6347; 
+    color: white; 
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 15px; 
+    background-color: #717568; 
+    color: white; 
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease; 
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+}
