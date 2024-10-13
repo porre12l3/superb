@@ -1,0 +1,82 @@
+body {
+    background-image: url('../img/Fondo_muro.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.header-ribbon {
+    width: 90%; 
+    height: 80px; 
+    background-color: #110c21; 
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    position: sticky; 
+    top: 0; 
+    z-index: 10; 
+}
+
+.consejos-container {
+    width: 90%;
+    max-width: 1200px;
+    background-color: rgba(17, 12, 33, 0.8); 
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    max-height: 70vh;
+}
+
+.consejos-container h2 {
+    color: white;
+}
+
+.consejos-item {
+    background-color: #b3b3b3; 
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+.consejos-item h3 {
+    margin: 0 0 5px 0; 
+}
+
+.consejos-item p {
+    margin: 0 0 10px 0; 
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 15px; 
+    background-color: #717568; 
+    color: white; 
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease; 
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+}

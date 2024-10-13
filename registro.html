@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/registro.css">
+    <script src="js/alert.js"></script>
+</head>
+<body>
+    <div class="slogan">Únete a nuestra comunidad</div>
+    <div class="register-container">
+        <div class="register-box">
+            <h2>Crear una cuenta</h2>
+            <form action="php/registro.php" method="POST" id="registerForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+                
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" required>
+                
+                <button type="submit">Registrarse</button>
+                <div id="error-message" class="error-message"></div>
+            </form>
+            <div class="social-register">
+                <a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Ftakeout.google.com%2F%3Fhl%3Des&followup=https%3A%2F%2Ftakeout.google.com%2F%3Fhl%3Des&hl=es&ifkv=AdF4I75oAvq0i3FrIUIDuylep_Jlr-WMT9S5vybxlr4OgYOP9WPt4m3ZCwNna65eVu5qB8DkoKJPPw&osid=1&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S1795189356%3A1722535842503019&ddm=0" class="google-signup-button">
+                    <img src="img/logo_google.png" alt="Registrarse con Google">
+                    Registrarse con Google
+                </a>
+                <a href="https://appleid.apple.com/sign-in" class="apple-signup-button">
+                    <img src="img/logo_apple.png" alt="Registrarse con Apple">
+                    Registrarse con Apple
+                </a>
+            </div>
+            <a href="login.html" class="login-link">¿Ya tienes una cuenta? Inicia sesión aquí</a>
+        </div>
+    </div>
+</body>
+</html>
+

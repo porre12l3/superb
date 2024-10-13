@@ -1,0 +1,240 @@
+body {
+    background-image: url('../img/Fondo_muro.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.header-ribbon {
+    width: 90%; 
+    height: 80px; 
+    background-color: #110c21; 
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px 0; 
+    position: sticky; 
+    top: 0; 
+    z-index: 10; 
+}
+
+.image-buttons {
+    display: flex;
+    gap: 30px;
+}
+
+.header-btn {
+    width: 60px;
+    transition: all 0.3s ease; 
+}
+
+.header-btn:hover {
+    transform: scale(1.2);
+    border-bottom: 3px solid #fff; 
+}
+
+a {
+    text-decoration: none; 
+}
+
+.wall-container {
+    width: 95%;
+    max-width: 1200px;
+    height: 90vh; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.main-wall {
+    width: 70%;
+    height: 85vh; 
+    background-color: #110c21; 
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto; 
+    position: relative;
+}
+
+.post-container {
+    flex: 1;
+    overflow-y: auto; 
+    max-height: 60vh;
+    white-space: pre-wrap; 
+}
+
+.post {
+    background-color: #b3b3b3; 
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+    white-space: pre-wrap;
+    word-wrap: break-word; 
+}
+
+.content {
+    max-height: 3em; 
+    overflow: hidden;
+    white-space: pre-wrap; 
+    transition: max-height 0.3s ease; 
+}
+
+.content.expanded {
+    max-height: 1000px; 
+}
+
+.toggle-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #717568; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.new-post {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 95%; 
+    padding: 10px;
+    background-color: rgba(17, 12, 33, 0.9); 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+textarea {
+    width: 99%; 
+    height: 70px;
+    border-radius: 10px;
+    border: 1px solid #ccc; 
+    padding: 8px;
+    resize: none; 
+    overflow-y: auto; 
+    overflow-x: hidden; 
+    background: transparent; 
+    color: white; 
+    margin-bottom: 10px;
+}
+
+.new-post img {
+    width: 40px; 
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease; 
+    align-self: flex-start; 
+}
+
+button.publish {
+    width: auto;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 15px; 
+    background-color: #717568; 
+    color: white; 
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease; 
+    margin-top: 10px;
+    align-self: flex-start;
+}
+
+button.publish:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+input[type="file"] {
+    display: none; 
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px; 
+    background-color: #717568; 
+    color: white; 
+}
+
+.post img, .post video {
+    max-width: 100%; 
+    border-radius: 10px; 
+    margin-top: 10px;
+}
+
+.menu {
+    width: 20%; 
+    height: 45vh; 
+    background-color: #110c21; 
+    border-radius: 20px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 20px; 
+    padding: 20px;
+}
+
+.menu h3 {
+    color: #717568; 
+    margin: 0 0 20px 0;
+    width: 100%;
+    text-align: center; 
+}
+
+.menu button {
+    margin: 10px 0;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 15px; 
+    background-color: transparent; 
+    color: white; 
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease; 
+    align-self: flex-start;
+}
+
+.menu button:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: white; 
+}
+
+.file-icon {
+    width: 55px; 
+    cursor: pointer;
+    transition: transform 0.3s ease; 
+}
+
+.file-icon:hover {
+    transform: scale(1.2); 
+}
+
+* {
+    box-sizing: border-box; 
+}
+
+html, body {
+    overflow-x: hidden; 
+    margin: 0; 
+    padding: 0; 
+}

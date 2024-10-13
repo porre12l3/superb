@@ -1,0 +1,151 @@
+body {
+    background-image: url('../img/Fondo_registro.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.slogan {
+    color: #000000;
+    font-size: 20px; 
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.register-container {
+    background-color: #A1EF8B;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 300px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+
+}
+
+.register-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-box h2 {
+    color: #000;
+    font-size: 18px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.register-box form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.register-box label {
+    color: #717568;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.register-box input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.register-box button {
+    padding: 10px 15px;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.register-box button:hover {
+    background-color: #004494;
+}
+
+.social-register {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.google-signup-button, .apple-signup-button {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    justify-content: center;
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.google-signup-button:hover, .apple-signup-button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.google-signup-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.apple-signup-button img {
+    width: 25px;
+    height: 15px;
+    margin-right: 8px;
+}
+
+a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.register-link {
+    margin-top: 15px;
+    color: #0056b3;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
