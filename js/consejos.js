@@ -1,23 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const consejosContainer = document.querySelector('.consejos-container');
+    const consejosContainer = document.querySelector('.consejos-items');
     
-    const consejos = [
+    const consejosDeSalud = [
         {
-            titulo: "Consejo 1",
-            descripcion: "Descripción breve del consejo 1...",
-            link: "url-del-consejo-1" 
+            titulo: 'Ejercicio para el Tratamiento de Lesiones',
+            descripcion: 'Realiza ejercicios específicos para mejorar tu movilidad y reducir el dolor.',
+            link: '#'
         },
         {
-            titulo: "Consejo 2",
-            descripcion: "Descripción breve del consejo 2...",
-            link: "url-del-consejo-2" 
+            titulo: 'Ejercicios de Fútbol para Principiantes',
+            descripcion: 'Descubre rutinas de entrenamiento para mejorar tus habilidades en el campo.',
+            link: '#'
         },
-
+        {
+            titulo: 'Consejos de Dieta Saludable',
+            descripcion: 'Aprende sobre la importancia de una alimentación balanceada.',
+            link: '#'
+        }
     ];
-
-    consejos.forEach(consejo => {
-        const consejoItem = document.createElement('div');
-        consejoItem.classList.add('consejos-item');
+    
+    consejosDeSalud.forEach(consejo => {
+        const consejosItem = document.createElement('div');
+        consejosItem.classList.add('consejos-item');
 
         const title = document.createElement('h3');
         title.textContent = consejo.titulo;
@@ -31,10 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
             window.location.href = consejo.link;
         };
 
-        consejoItem.appendChild(title);
-        consejoItem.appendChild(description);
-        consejoItem.appendChild(button);
+        consejosItem.appendChild(title);
+        consejosItem.appendChild(description);
+        consejosItem.appendChild(button);
 
-        consejosContainer.appendChild(consejoItem);
+        consejosContainer.appendChild(consejosItem);
     });
 });

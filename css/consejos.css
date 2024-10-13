@@ -38,8 +38,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: auto;
-    max-height: 70vh;
 }
 
 .consejos-container h2 {
