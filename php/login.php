@@ -1,5 +1,6 @@
 <?php
-include 'conexion.php';
+include 'conexion.php'; // Incluye la conexión a la base de datos
+session_start(); // Inicia la sesión del usuario
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
@@ -14,8 +15,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         
         if (password_verify($password, $row['contraseña'])) {
+            // Guarda información del usuario en la sesión
+            $_SESSION['user_id'] = $row['id'];
+            $_SESSION['username'] = $row['nombre_de_usuario'];
+            $_SESSION['email'] = $row['email'];
             
-            echo "Iniaste sesion correctamente";
+            // Redirige al muro
             header("Location: ../muro.html");
             exit();
         } else {
@@ -29,3 +34,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
+
