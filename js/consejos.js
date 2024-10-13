@@ -1,44 +1,46 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const consejosContainer = document.querySelector('.consejos-items');
-    
-    const consejosDeSalud = [
-        {
-            titulo: 'Ejercicio para el Tratamiento de Lesiones',
-            descripcion: 'Realiza ejercicios específicos para mejorar tu movilidad y reducir el dolor.',
-            link: '#'
-        },
-        {
-            titulo: 'Ejercicios de Fútbol para Principiantes',
-            descripcion: 'Descubre rutinas de entrenamiento para mejorar tus habilidades en el campo.',
-            link: '#'
-        },
-        {
-            titulo: 'Consejos de Dieta Saludable',
-            descripcion: 'Aprende sobre la importancia de una alimentación balanceada.',
-            link: '#'
-        }
-    ];
-    
-    consejosDeSalud.forEach(consejo => {
-        const consejosItem = document.createElement('div');
-        consejosItem.classList.add('consejos-item');
+    const consejosContainer = document.getElementById('consejos-list');
 
-        const title = document.createElement('h3');
-        title.textContent = consejo.titulo;
+    const rssFeeds = {
+        "ejercicios": 'https://rss2json.com/api.json?rss_url=https://www.20minutos.es/rss/deportes/',
+        "futbol": 'https://rss2json.com/api.json?rss_url=https://as.com/rss/tags/futbol/primera.xml',
+        "dieta_saludable": 'https://rss2json.com/api.json?rss_url=https://www.menshealth.com/es/nutricion/rss'
+    };
 
-        const description = document.createElement('p');
-        description.textContent = consejo.descripcion;
+    const apiKey = 'fr4aeeuuqxowvs9ykecuu8rwpnh7a5iskwdctmjz';
 
-        const button = document.createElement('button');
-        button.textContent = 'Ver más';
-        button.onclick = () => {
-            window.location.href = consejo.link;
-        };
+    function cargarConsejos(feedUrl) {
+        const url = `${feedUrl}&api_key=${apiKey}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                data.items.forEach(item => {
+                    const consejoItem = document.createElement('div');
+                    consejoItem.classList.add('consejo-item');
 
-        consejosItem.appendChild(title);
-        consejosItem.appendChild(description);
-        consejosItem.appendChild(button);
+                    const title = document.createElement('h3');
+                    title.textContent = item.title;
 
-        consejosContainer.appendChild(consejosItem);
-    });
+                    const description = document.createElement('p');
+                    description.textContent = item.description;
+
+                    const button = document.createElement('button');
+                    button.textContent = 'Ver más';
+                    button.onclick = () => {
+                        window.location.href = item.link;
+                    };
+
+                    consejoItem.appendChild(title);
+                    consejoItem.appendChild(description);
+                    consejoItem.appendChild(button);
+
+                    consejosContainer.appendChild(consejoItem);
+                });
+            })
+            .catch(error => console.error('Error al cargar los consejos:', error));
+    }
+
+    cargarConsejos(rssFeeds.ejercicios);
+    cargarConsejos(rssFeeds.futbol);
+    cargarConsejos(rssFeeds.dieta_saludable);
 });
