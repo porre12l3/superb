@@ -1,4 +1,4 @@
-/* Estilo general del cuerpo */
+
 body {
     background-image: url('../img/Fondo_muro.jpg');
     background-size: cover;
@@ -6,56 +6,24 @@ body {
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column; 
     align-items: center;
     font-family: 'Lato', sans-serif;
+    color: #fff;
 }
 
-/* Contenedor principal del perfil */
-.profile-container {
-    background-color: rgba(17, 12, 33, 0.9); /* Fondo similar al muro */
-    border-radius: 20px;
-    padding: 30px;
-    width: 400px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    color: white;
-    text-align: center;
+.main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px; 
 }
 
-/* Título del perfil */
-.profile-container h1 {
-    margin-bottom: 20px;
-    font-size: 28px;
-    color: #ff4500; /* Color destacado */
-}
 
-/* Estilo para los datos del perfil */
-.profile-info {
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: #ffffff; /* Texto en blanco */
-}
-
-/* Estilo para los botones en la página de perfil */
-.profile-button {
-    padding: 10px 20px;
-    border-radius: 15px;
-    background-color: #ff4500;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    margin-top: 15px;
-}
-
-.profile-button:hover {
-    background-color: #ff6347;
-}
-
-/* Estilo de la cinta de navegación */
 .header-ribbon {
     width: 100%;
     height: 80px;
@@ -68,9 +36,10 @@ body {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+
 .image-buttons {
     display: flex;
-    gap: 30px;
+    gap: 40px; 
 }
 
 .header-btn {
@@ -80,5 +49,89 @@ body {
 
 .header-btn:hover {
     transform: scale(1.2);
-    border-bottom: 3px solid #fff;
+    border-bottom: 3px solid #ff4500;
+}
+
+
+.profile-container {
+    background-color: rgba(17, 12, 33, 0.85); 
+    border-radius: 20px;
+    padding: 40px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5); 
+    color: white;
+    text-align: center;
+    margin-top: 20px; 
+    transition: all 0.3s ease;
+}
+
+
+.profile-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.7); 
+}
+
+
+.profile-container h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #ff6347; 
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+
+.profile-info {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #ffffff;
+    border-bottom: 1px solid #ff4500; 
+    padding-bottom: 10px;
+    text-align: left;
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.profile-button {
+    padding: 12px 25px;
+    border-radius: 25px;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.profile-button:hover {
+    background-color: #ff6347;
+    transform: scale(1.05); 
+}
+
+
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 30px;
+        width: 90%;
+    }
+
+    .profile-info {
+        font-size: 16px;
+    }
+
+    .profile-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .header-btn {
+        width: 50px;
+    }
 }
