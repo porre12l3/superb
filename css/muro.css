@@ -238,3 +238,24 @@ html, body {
     margin: 0; 
     padding: 0; 
 }
+
+@media (max-width: 768px) {
+    .wall-container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .main-wall {
+        width: 100%;
+        height: auto; /* Permite que la altura se ajuste automáticamente */
+    }
+
+    .menu {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .new-post {
+        width: 100%;
+    }
+}
