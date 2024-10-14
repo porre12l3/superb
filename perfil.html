@@ -1,26 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil - Superb</title>
-    <link rel="stylesheet" href="css/perfil.css"> <!-- Asegúrate de tener un CSS para estilos de perfil -->
+    <title>Perfil del Usuario</title>
+    <link rel="stylesheet" href="css/perfil.css">
 </head>
 <body>
+
+    <!-- Cinta de navegación con iconos -->
     <div class="header-ribbon">
         <div class="image-buttons">
-            <a href="muro.html"><img src="img/icono_de_casa.png" class="header-btn" alt="Icono 1"></a> 
-            <a href="mensajeria.html"><img src="img/icono_de_mensaje.png" class="header-btn" alt="Icono 2"></a>
-            <a href="perfil.html"><img src="img/icono_de_perfil.png" class="header-btn" alt="Icono 3"></a>
+            <a href="muro.html"><img src="img/icono_de_casa.png" class="header-btn" alt="Inicio"></a>
+            <a href="mensajeria.html"><img src="img/icono_de_mensaje.png" class="header-btn" alt="Mensajería"></a>
+            <a href="perfil.html"><img src="img/icono_de_perfil.png" class="header-btn" alt="Perfil"></a>
         </div>
     </div>
 
+    <!-- Contenedor principal del perfil -->
     <div class="profile-container">
-        <h2>Perfil del Usuario</h2>
-        <p id="username"></p>
-        <p id="email"></p>
+        <h1>Perfil del Usuario</h1>
+        <div class="profile-info" id="username">Nombre de Usuario: Cargando...</div>
+        <div class="profile-info" id="email">Correo Electrónico: Cargando...</div>
+
+        <!-- Botón de cerrar sesión o editar perfil, puedes agregar más botones -->
+        <button class="profile-button" onclick="logout()">Cerrar Sesión</button>
     </div>
 
-    <script src="js/perfil.js"></script> <!-- Incluyendo el archivo JS aquí -->
+    <script src="js/perfil.js"></script>
+    <script>
+        function logout() {
+            // Aquí puedes agregar la lógica para cerrar sesión si lo deseas
+            window.location.href = 'login.html';
+        }
+    </script>
+    
 </body>
 </html>

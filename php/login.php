@@ -3,7 +3,6 @@ session_start();
 session_unset();  // Elimina todas las variables de sesión
 session_destroy();  // Destruye la sesión
 session_start();  // Inicia una nueva sesión
-
 include 'conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -21,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $row['contraseña'])) {
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['email'] = $row['email'];
-            
+
             header("Location: ../muro.html");
             exit();
         } else {
@@ -35,3 +34,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
+
