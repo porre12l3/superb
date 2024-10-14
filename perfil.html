@@ -19,20 +19,62 @@
     <!-- Contenedor principal del perfil -->
     <div class="profile-container">
         <h1>Perfil del Usuario</h1>
+        
+        <!-- Imagen de Perfil -->
+        <img src="ruta/a/la/imagen/perfil.jpg" id="profileImage" class="profile-image" alt="Imagen de Perfil">
+    
+        <!-- Botón para seleccionar imagen de perfil -->
+        <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="previewImage(event)">
+        <button class="profile-button" onclick="document.getElementById('fileInput').click()">Cambiar Imagen de Perfil</button>
+    
+        <!-- Descripción -->
+        <textarea id="description" placeholder="Escribe tu descripción aquí..."></textarea>
+
+        <!-- Botón para guardar la descripción y la imagen de perfil -->
+        <button class="profile-button" onclick="saveProfile()">Guardar Perfil</button>
+
+    
         <div class="profile-info" id="username">Nombre de Usuario: Cargando...</div>
         <div class="profile-info" id="email">Correo Electrónico: Cargando...</div>
-
-        <!-- Botón de cerrar sesión o editar perfil, puedes agregar más botones -->
+    
+        <!-- Botón de cerrar sesión o editar perfil -->
         <button class="profile-button" onclick="logout()">Cerrar Sesión</button>
     </div>
+    
+    
 
     <script src="js/perfil.js"></script>
     <script>
         function logout() {
-            // Aquí puedes agregar la lógica para cerrar sesión si lo deseas
             window.location.href = 'login.html';
         }
+
+        function updateProfile() {
+            const formData = new FormData();
+            formData.append('descripcion', document.getElementById('profileDescription').value);
+            const fileInput = document.getElementById('profilePicture');
+            if (fileInput.files[0]) {
+                formData.append('foto_perfil', fileInput.files[0]);
+            }
+
+            fetch('php/update_profile.php', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Perfil actualizado exitosamente');
+                    // Recargar los datos del perfil para mostrar la nueva información
+                    location.reload();
+                } else {
+                    alert('Error al actualizar el perfil');
+                }
+            })
+            .catch(error => {
+                console.error('Error al actualizar el perfil:', error);
+            });
+        }
     </script>
-    
 </body>
 </html>
