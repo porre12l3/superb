@@ -101,8 +101,7 @@ body {
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 15px;
-    margin-bottom:  15px;
+    margin-top: 30px; /* Ajusta el margen superior para separar del nombre de usuario */
     text-transform: uppercase;
 }
 
@@ -132,30 +131,29 @@ body {
 }
 
 .profile-image {
-    width: 150px; /* Ajusta el tamaño según sea necesario */
-    height: 150px; /* Ajusta el tamaño según sea necesario */
-    border-radius: 50%; /* Hace que la imagen sea circular */
-    object-fit: cover; /* Mantiene la proporción de la imagen */
-    border: 2px solid #4CAF50; /* Borde verde */
-    margin-bottom: 20px; /* Espacio debajo de la imagen */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 2px solid #4CAF50;
+    margin-bottom: 20px;
 }
 
 textarea {
-    width: 100%; /* Ancho completo */
-    max-width: 400px; /* Limita el ancho máximo */
-    height: 100px; /* Altura fija */
-    padding: 10px; /* Espacio interno */
-    border: 2px solid black; /* Borde negro */
-    border-radius: 5px; /* Bordes redondeados */
+    width: 100%;
+    max-width: 400px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #000; /* Borde negro */
+    border-radius: 5px;
+    resize: none;
+    font-size: 16px;
+    color: white; /* Letras blancas */
     background-color: transparent; /* Fondo transparente */
-    resize: none; /* Desactiva el redimensionamiento */
-    font-size: 16px; /* Tamaño de la fuente */
-    color: white; /* Color del texto */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    margin-top: 10px; /* Espacio superior */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 textarea:focus {
     border-color: #4CAF50; /* Cambia el color del borde al enfocar */
-    outline: none; /* Quita el borde de enfoque predeterminado */
+    outline: none; 
 }
