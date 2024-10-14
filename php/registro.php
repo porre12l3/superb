@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $edad = $_POST['edad'];
 
-    $stmt = $conn->prepare("INSERT INTO `red social` (nombre, apellido, email, contraseña, edad) VALUES (?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO `red_social` (nombre, apellido, email, contraseña, edad) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssi", $nombre, $apellido, $email, $password, $edad);
 
     if ($stmt->execute()) {
