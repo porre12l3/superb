@@ -15,7 +15,7 @@ function renderPosts(posts) {
 
         if (post.image) {
             const img = document.createElement('img');
-            img.src = post.image;
+            img.src = 'uploads/' + post.image; // Se agrega la ruta completa
             img.alt = 'Publicación de imagen';
             img.classList.add('post-image');
             content.appendChild(img);
@@ -40,6 +40,11 @@ async function addPost() {
     const mediaFile = mediaInput.files[0];
     const formData = new FormData();
 
+    if (!postText && !mediaFile) {
+        alert('Por favor escribe algo o selecciona un archivo para subir.');
+        return;
+    }
+
     if (postText || mediaFile) {
         formData.append('postText', postText);
         if (mediaFile) {
@@ -56,6 +61,8 @@ async function addPost() {
             mediaInput.value = '';
             loadPosts();
         } else {
+            const error = await response.json();
+            alert('Error al publicar: ' + error.message);
             console.error('Error al publicar:', response.statusText);
         }
     }
