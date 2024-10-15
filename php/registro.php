@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssssi", $nombre, $apellido, $email, $password, $edad);
 
     if ($stmt->execute()) {
-        header("Location: ../registro.html?registro_exitoso=true");
+        header("Location: ../login.html?registro_exitoso=true");
         exit();
     } else {
         echo "Error en el registro";
