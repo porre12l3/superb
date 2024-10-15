@@ -91,9 +91,6 @@ function saveProfile() {
     .then(data => {
         if (data.success) {
             alert('Perfil guardado con éxito.');
-
-            // Volver a obtener los datos actualizados del perfil
-            fetchProfileData();
         } else {
             alert('Error al guardar el perfil: ' + data.message);
         }
@@ -102,6 +99,7 @@ function saveProfile() {
         console.error('Error al guardar el perfil:', error);
     });
 }
+
 
 function fetchProfileData() {
     fetch('php/perfil.php')
