@@ -1,11 +1,10 @@
 <?php
 $servername = "localhost";
-$username = "root"; 
+$username = "root";
 $password = "";
-$dbname = "superb";
+$dbname = "purseowo";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
-
 
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);

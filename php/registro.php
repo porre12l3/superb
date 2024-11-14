@@ -1,23 +1,32 @@
 <?php
-include 'conexion.php';
+include('conexion.php');
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nombre_de_usuario = $_POST['nombre_de_usuario'];
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $edad = $_POST['edad'];
 
-    $stmt = $conn->prepare("INSERT INTO `red_social` (nombre, apellido, email, contraseña, edad) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssi", $nombre, $apellido, $email, $password, $edad);
+    $sql = "SELECT * FROM usuarios WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    if ($stmt->execute()) {
-        header("Location: ../login.html?registro_exitoso=true");
-        exit();
+    if ($result->num_rows > 0) {
+        echo "<script>alert('Este correo electrónico ya está registrado.');</script>";
     } else {
-        echo "Error en el registro";
-    }
+        $sql = "INSERT INTO usuarios (nombre_de_usuario, email, password) VALUES (?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sss", $nombre_de_usuario, $email, $password);
 
-    $stmt->close();
-    $conn->close();
+        if ($stmt->execute()) {
+            echo "<script>
+                    alert('Registrado con éxito');
+                    window.location.href = '../login.html';  // Ajuste de la ruta a login.html
+                  </script>";
+        } else {
+            echo "<script>alert('Error al registrar. Intenta de nuevo.');</script>";
+        }
+    }
 }
+?>

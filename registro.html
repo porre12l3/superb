@@ -8,25 +8,19 @@
     <script src="js/alert.js"></script>
 </head>
 <body>
-    <div class="slogan">Únete a nuestra comunidad</div>
+    <div class="slogan">(una frase o eslogan)</div>
     <div class="register-container">
         <div class="register-box">
             <h2>Crear una cuenta</h2>
             <form action="php/registro.php" method="POST" id="registerForm">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" required>
+                <label for="nombre_de_usuario">Nombre de usuario:</label>
+                <input type="text" id="nombre_de_usuario" name="nombre_de_usuario" required>
                 
                 <label for="email">Correo electrónico:</label>
                 <input type="email" id="email" name="email" required>
                 
                 <label for="password">Contraseña:</label>
                 <input type="password" id="password" name="password" required>
-                
-                <label for="edad">Edad:</label>
-                <input type="number" id="edad" name="edad" required>
                 
                 <button type="submit">Registrarse</button>
                 <div id="error-message" class="error-message"></div>
@@ -46,4 +40,3 @@
     </div>
 </body>
 </html>
-

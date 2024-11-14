@@ -1,41 +1,38 @@
 body {
-    background-image: url('../img/Fondo_registro.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: none; /* Imagen de fondo eliminada - Agregar la URL de una imagen si se necesita */
+    background-color: #ffffff; /* Fondo blanco - Cambiar según el diseño deseado */
     margin: 0;
     padding: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif; /* Fuente original conservada */
 }
 
 .slogan {
-    color: #000000;
-    font-size: 20px; 
+    color: #000000; /* Color del texto de la 'slogan' - Cambiar según el diseño */
+    font-size: 20px; /* Tamaño de la fuente de la 'slogan' - Ajustar según el diseño */
     position: absolute;
     top: 17%;
     left: 50%;
     transform: translate(-50%, 0);
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: none; /* Sombra del texto eliminada - Agregar sombra si se desea */
 }
 
 .register-container {
-    background-color: #A1EF8B;
-    padding: 20px;
-    border-radius: 8px;
+    background-color: #ffffff; /* Fondo blanco del contenedor de registro - Cambiar según el diseño */
+    padding: 20px; /* Espaciado interno del contenedor - Ajustar según el diseño */
+    border-radius: 0; /* Borde sin redondeo - Cambiar para hacer los bordes redondeados si es necesario */
     width: 80%;
     max-width: 300px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    box-shadow: none; /* Sombra eliminada - Agregar una sombra si se desea */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative; 
-
+    position: relative;
 }
 
 .register-box {
@@ -46,8 +43,8 @@ body {
 }
 
 .register-box h2 {
-    color: #000;
-    font-size: 18px;
+    color: #000000; /* Color del texto de encabezado - Cambiar según el diseño */
+    font-size: 18px; /* Tamaño de la fuente del encabezado - Ajustar según el diseño */
     margin-top: 0;
     text-align: center;
 }
@@ -59,31 +56,31 @@ body {
 }
 
 .register-box label {
-    color: #717568;
-    font-size: 14px;
+    color: #000000; /* Color del texto de las etiquetas - Cambiar según el diseño */
+    font-size: 14px; /* Tamaño de la fuente de las etiquetas - Ajustar según el diseño */
     margin-bottom: 5px;
 }
 
 .register-box input {
-    padding: 10px;
+    padding: 10px; /* Espaciado interno del campo de entrada - Ajustar según el diseño */
     margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
+    border: 1px solid #000000; /* Color del borde - Cambiar según el diseño */
+    border-radius: 0; /* Borde sin redondeo - Cambiar para hacer los bordes redondeados si es necesario */
+    font-size: 14px; /* Tamaño de la fuente del campo de entrada - Ajustar según el diseño */
 }
 
 .register-box button {
-    padding: 10px 15px;
-    background-color: #0056b3;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
+    padding: 10px 15px; /* Espaciado interno del botón - Ajustar según el diseño */
+    background-color: #ffffff; /* Fondo del botón en blanco - Cambiar según el diseño */
+    color: #000000; /* Color del texto del botón - Cambiar según el diseño */
+    border: 1px solid #000000; /* Color del borde del botón - Cambiar según el diseño */
+    border-radius: 0; /* Borde sin redondeo - Cambiar para hacer los bordes redondeados si es necesario */
     cursor: pointer;
-    font-size: 14px;
+    font-size: 14px; /* Tamaño de la fuente del botón - Ajustar según el diseño */
 }
 
 .register-box button:hover {
-    background-color: #004494;
+    background-color: #e0e0e0; /* Fondo del botón al hacer hover - Cambiar según el diseño */
 }
 
 .social-register {
@@ -97,55 +94,42 @@ body {
 .google-signup-button, .apple-signup-button {
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 10px; /* Espaciado interno de los botones de redes sociales - Ajustar según el diseño */
     margin-bottom: 10px;
     width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: 1px solid #000000; /* Color del borde de los botones de redes sociales - Cambiar según el diseño */
+    border-radius: 0; /* Borde sin redondeo - Cambiar para hacer los bordes redondeados si es necesario */
     text-decoration: none;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 14px; /* Tamaño de la fuente de los botones de redes sociales - Ajustar según el diseño */
     justify-content: center;
-    background-color: #fff;
-    color: #000;
+    background-color: #ffffff; /* Fondo de los botones de redes sociales en blanco - Cambiar según el diseño */
+    color: #000000; /* Color del texto de los botones de redes sociales - Cambiar según el diseño */
     transition: background-color 0.3s, color 0.3s;
 }
 
-.google-signup-button:hover, .apple-signup-button:hover {
-    background-color: #333;
-    color: #fff;
-}
-
 .google-signup-button img {
-    width: 20px;
+    width: 20px; /* Tamaño de la imagen de Google - Mantener según el diseño original */
     height: 20px;
     margin-right: 8px;
 }
 
 .apple-signup-button img {
-    width: 25px;
+    width: 25px; /* Tamaño de la imagen de Apple - Mantener según el diseño original */
     height: 15px;
     margin-right: 8px;
 }
 
 a {
-    color: #0056b3;
+    color: #000000; /* Color de los enlaces - Cambiar según el diseño */
     text-decoration: none;
     font-weight: bold;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
 .register-link {
     margin-top: 15px;
-    color: #0056b3;
+    color: #000000; /* Color del texto del enlace de registro - Cambiar según el diseño */
     text-decoration: none;
-    font-size: 14px;
+    font-size: 14px; /* Tamaño de la fuente del enlace de registro - Ajustar según el diseño */
     text-align: center;
-}
-
-.register-link:hover {
-    text-decoration: underline;
 }
